@@ -1,0 +1,24 @@
+<image mode="aspectFit" src="../../img/play_bg.jpg" id="play_bg"/>
+<view>
+  <view id="play_needle">
+    <image src="../../img/needle.png" class="{{playingNeedle}}"/>
+  </view>
+  <view id="music_covert" animation="{{animation}}">
+    <image id="cd" src="../../img/play.png" />
+    <image id="covert" src="{{music.pic}}" />
+  </view>
+</view>
+
+<view id="playAction">
+<view class="weui-flex" id="progress_row">
+      <view><text class="slide-text slide-text-current">{{currentTime}}</text></view>
+      <view class="weui-flex__item"><slider id="music_progress" min="0" max="{{totalSeconds}}" bindchange="seekMusic" value="{{currentSeconds}}"/></view>
+      <view><text class="slide-text slide-text-total">{{totalTime}}</text></view>
+</view>
+<view>
+  <image bindtap="prev" src="../../img/prev.png"/>
+  <image bindtap="audioOption" src="../../img/ajf.png" wx:if="{{!playing}}"/>
+  <image bindtap="audioOption" src="../../img/ajd.png" wx:else/>
+  <image bindtap="next" src="../../img/next.png"/>
+</view>
+</view>
